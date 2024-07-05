@@ -1,0 +1,36 @@
+{% extends "parent.html" %}
+
+{% block title %}Reservation Form{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+       <h3>Fill out this form to confirm your reservation</h3>
+        <div class="form-group">
+            {{ form.location.label }}
+            {{ form.location(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.date.label }}
+            {{ form.date(class="form-control", type="date") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.start_time.label }}
+            {{ form.start_time(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.end_time.label }}
+            {{ form.end_time(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.message.label }}
+            {{ form.message(class="form-control") }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

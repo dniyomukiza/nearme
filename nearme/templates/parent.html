@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Near Me{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/img.png') }}" alt="Photo">
+    <header>
+        <nav>
+            <div class="left">
+                <a href="{{ url_for('main.home') }}">NearMe</a>
+                <a href="{{ url_for('main.register') }}">Sign Up</a>
+                <a href="{{ url_for('main.login') }}">Login</a>
+            </div>
+            <div class="right">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        
+    </footer>
+</body>
+</html>

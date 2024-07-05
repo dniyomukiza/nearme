@@ -1,0 +1,10 @@
+{% extends "parent.html" %}
+
+{% block title %}Reservation Summary{% endblock %}
+
+{% block content %}
+    <h1>Reservation Summary</h1>
+    <p>Total Time: {{ total_time }} minutes</p>
+    <p>Total Amount Owed: ${{ total_amount }}</p>
+    <a href="{{ url_for('main.reserve') }}">Make another reservation</a>
+{% endblock %}

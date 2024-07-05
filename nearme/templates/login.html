@@ -1,0 +1,22 @@
+
+{% extends "parent.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+    {% include 'messages.html' %}
+    <div class="login-container">
+        <form method="POST" action="">
+            {{ form.csrf_token() }}
+            {{ form.hidden_tag() }}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <div class="remember-me-container">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me">Remember Me</label>
+            </div>
+            <input type="submit" value="Login" class="btn">
+        </form>
+        <a href="{{ url_for('main.register') }}" class="register-link">No account? Sign up</a>
+    </div>
+{% endblock %}

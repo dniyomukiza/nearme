@@ -1,0 +1,35 @@
+{% extends "parent.html" %}
+
+{% block title %}Near Me{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="POST"> 
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter the address of your location" required>
+            </div>
+            <div class="form-group">
+                <label for="hours">Number of hours</label>
+                <input type="number" id="hours" name="hours" min="0" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="minutes">Minutes</label>
+                <input type="number" id="minutes" name="minutes" min="0" max="60" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">View price</button>
+            </div>
+        </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flash-messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+{% endblock %}
