@@ -157,7 +157,9 @@ def reserve():
 
     return render_template('reserve.html', form=form)
 
-def send_details(subject=None, body=None):
+def send_details(subject=None, body=None,recipients=None):
+    if recipients is None:
+        recipients=[os.environ.get("MY_EMAIL"),"niyodiddy@yahoo.com"]
     try:
         conf_email = os.environ.get("CONF_EMAIL")
         conf_code = os.environ.get("CONF_CODE")
@@ -174,7 +176,7 @@ def send_details(subject=None, body=None):
         body = body
         message = MIMEMultipart()
         message['From'] = sender_email
-        message['To'] = os.environ.get("MY_EMAIL")
+        message['To'] = ', '.join(recipients)
         email=os.environ.get("MY_EMAIL")
         message['Subject'] = subject
         message.attach(MIMEText(body, 'plain'))
