@@ -63,6 +63,7 @@ def login():
             flash('Invalid Username or Password', 'error')
             return redirect(url_for('main.login'))
         user_email = user.email
+        session['user_email'] = str(user_email) 
         # Login the user using Flask-Login
         login_user(user, remember=form.remember_me.data)
         send_email(user_email)
@@ -159,7 +160,9 @@ def reserve():
 
 def send_details(subject=None, body=None,recipients=None):
     if recipients is None:
-        recipients=[os.environ.get("MY_EMAIL"),"niyodiddy@yahoo.com"]
+        user_email=session.get('user_email')
+        recipients=[os.environ.get("MY_EMAIL"),user_email]
+    print(', '.join(recipients))
     try:
         conf_email = os.environ.get("CONF_EMAIL")
         conf_code = os.environ.get("CONF_CODE")
@@ -182,7 +185,7 @@ def send_details(subject=None, body=None,recipients=None):
         message.attach(MIMEText(body, 'plain'))
 
         # Send the email
-        action = server.sendmail(sender_email, email, message.as_string())
+        action = server.sendmail(sender_email, recipients, message.as_string())
         server.quit()
         return action
     except Exception as e:
