@@ -1,21 +1,26 @@
 {% extends "parent.html" %}
 
 {% block content %}
+<div class="about-container">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <h3 class="about-title">Welcome to Near Me</h3>
+    <p class="about-intro">Welcome to Near Me, your ultimate mobile home service provider. We understand that modern life can be fast-paced and unpredictable, and we are here to offer you convenience and comfort wherever you are. At Near Me, we provide high-quality, mobile home services tailored to meet your specific needs, 
+        no matter where you are. Whether you're at a construction site, between shifts, in a new city for a meeting or event, or simply in need of a place to rest for a few hours, we are here to ensure you have a clean, comfortable, and private space at your disposal.</p>
+    </section>
 
-<h1>Welcome to Near Me</h1>
-<p>Welcome to Near Me, your ultimate mobile home service provider. We understand that modern life can be fast-paced and unpredictable, and we are here to offer you convenience and comfort wherever you are.</p>
+    <section class="about-section">
+        <h4 class="about-section-title">Our Services</h4>
+        <p class="about-section-content">Near Me offers a range of mobile home services designed to cater to your unique situations:</p>
+        <ul class="about-services-list">
+            <li><strong>Construction Site Comfort:</strong> Need a quick shower and a fresh start before running errands or finishing your day? Our mobile units are equipped with modern showers and amenities to help you stay clean and refreshed on-site.</li>
+            <li><strong>Shift Transitions:</strong> Switching jobs or shifts can be exhausting. Let us provide you with a comfortable space to shower, change, and recharge before you move on to your next task.</li>
+            <li><strong>Event and Meeting Preparation:</strong> Arriving in a new city for an important meeting or event and running late? Our mobile services are available to give you a few minutes of peace to shower, change, and prepare, ensuring you arrive looking your best.</li>
+            <li><strong>Short-Term Rest:</strong> Sometimes, all you need is a few hours of rest without the hassle and expense of booking a hotel. Our mobile units offer a quiet, private place to relax and recharge, right where you need it.</li>
+        </ul>
+    </section>
 
-<h2>Our Mission</h2>
-<p>At Near Me, our mission is to provide high-quality, mobile home services tailored to meet your specific needs, no matter where you are. Whether you're at a construction site, between shifts, in a new city for a meeting or event, or simply in need of a place to rest for a few hours, we are here to ensure you have a clean, comfortable, and private space at your disposal.</p>
-
-<h2>Our Services</h2>
-<p>Near Me offers a range of mobile home services designed to cater to your unique situations:</p>
-<ul>
-    <li><strong>Construction Site Comfort:</strong> Need a quick shower and a fresh start before running errands or finishing your day? Our mobile units are equipped with modern showers and amenities to help you stay clean and refreshed on-site.</li>
-    <li><strong>Shift Transitions:</strong> Switching jobs or shifts can be exhausting. Let us provide you with a comfortable space to shower, change, and recharge before you move on to your next task.</li>
-    <li><strong>Event and Meeting Preparation:</strong> Arriving in a new city for an important meeting or event and running late? Our mobile services are available to give you a few minutes of peace to shower, change, and prepare, ensuring you arrive looking your best.</li>
-    <li><strong>Short-Term Rest:</strong> Sometimes, all you need is a few hours of rest without the hassle and expense of booking a hotel. Our mobile units offer a quiet, private place to relax and recharge, right where you need it.</li>
-</ul>
-
-<p>At Near Me, we believe in making your life easier by bringing the comforts of home directly to you. No more rushing, no more stress—just convenient, high-quality service when and where you need it.</p>
+    <section class="about-section">
+        <p class="about-conclusion">We believe in making your life easier by bringing the comforts of home directly to you. No more rushing, no more stress—just convenient, high-quality service when and where you need it.</p>
+    </section>
+</div>
 {% endblock %}

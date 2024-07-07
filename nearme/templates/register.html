@@ -6,6 +6,7 @@
     <div class="register-container">
         {% include 'messages.html' %}
         <h2>Create Account</h2>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css') }}">
         <p>You must create an account to reserve your spot</p>
         <form method="POST" action="">
             {{ form.hidden_tag() }}

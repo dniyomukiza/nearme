@@ -5,6 +5,7 @@
 
 {% block content %}
     {% include 'messages.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <div class="login-container">
         <form method="POST" action="">
             {{ form.csrf_token() }}
