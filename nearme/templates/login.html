@@ -7,6 +7,7 @@
     {% include 'messages.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <div class="login-container">
+        <strong><p>Please sign in</p></strong>
         <form method="POST" action="">
             {{ form.csrf_token() }}
             {{ form.hidden_tag() }}
