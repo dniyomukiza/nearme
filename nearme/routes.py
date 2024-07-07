@@ -161,7 +161,7 @@ def reserve():
 def send_details(subject=None, body=None,recipients=None):
     if recipients is None:
         user_email=session.get('user_email')
-        recipients=[os.environ.get("MY_EMAIL"),user_email]
+        recipients=[os.environ.get("SENDER_EMAIL"),user_email]
     print(', '.join(recipients))
     try:
         conf_email = os.environ.get("CONF_EMAIL")
@@ -190,3 +190,38 @@ def send_details(subject=None, body=None,recipients=None):
         return action
     except Exception as e:
         return f"Failed to send details: {e}"
+    
+@main.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        def send_message():
+            conf_email = os.environ.get("CONF_EMAIL")
+            conf_code = os.environ.get("CONF_CODE")
+            sender_email = os.environ.get("SENDER_EMAIL")
+            if not conf_email or not conf_code or not sender_email:
+                return "Environment variables not properly set."
+            
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login(sender_email, conf_code)
+
+            # Create the email content
+            subject = 'Contact form'
+            message=f'First name: {form.FirstName.data}\nLast name: {form.LastName.data} \nPhone: {form.phone.data} \nEmail: {form.email.data}\nMessage: {form.message.data}'
+            body = message
+            message = MIMEMultipart()
+            message['From'] = sender_email
+            message['To'] = os.environ.get("SENDER_EMAIL")
+            email=os.environ.get("MY_EMAIL")
+            message['Subject'] = subject
+            message.attach(MIMEText(body, 'plain'))
+
+            # Send the email
+            action = server.sendmail(sender_email,email, message.as_string())
+            server.quit()
+            return action
+        send_message()
+        flash("We will get back to you shortly!")    
+        return redirect(url_for('main.home'))
+    return render_template("contact.html",form=form)

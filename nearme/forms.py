@@ -57,3 +57,11 @@ class ReservationForm(FlaskForm):
 
         if duration_minutes > 300:  # 300 minutes = 5 hours
             raise ValidationError('Reservation duration cannot exceed 5 hours')
+    
+class ContactForm(FlaskForm):
+    FirstName = StringField('First Name', validators=[DataRequired(), Length(max=50)])
+    LastName = StringField('Last Name', validators=[DataRequired(), Length(max=50)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    phone = StringField('Phone', validators=[DataRequired(), Length(max=15)])
+    message = TextAreaField('Message', validators=[DataRequired(), Length(max=500)])
+    submit = SubmitField('Submit')
