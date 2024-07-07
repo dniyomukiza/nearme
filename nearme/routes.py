@@ -225,3 +225,7 @@ def contact():
         flash("We will get back to you shortly!")    
         return redirect(url_for('main.home'))
     return render_template("contact.html",form=form)
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
