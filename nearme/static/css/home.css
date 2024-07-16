@@ -11,12 +11,12 @@ img {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: black; 
-    position: relative; 
-    padding: 8px 16px; 
+    color: black;
+    position: relative;
+    padding: 8px 16px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    border-radius: 20px; 
+    border-radius: 20px;
     background-color: #5b89ba;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex: 1; /* Ensure all links have equal width */
@@ -25,8 +25,8 @@ nav a {
 
 /* Hover effect */
 nav a:hover {
-    border-color: rgba(0, 0, 0, 0.1); 
-    background-color: rgba(0, 0, 0, 0.05); 
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -53,11 +53,19 @@ nav {
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: center;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
 nav .left, nav .right {
     display: flex;
+    flex: 1;
+    justify-content: space-evenly;
 }
 
 .content {
@@ -113,16 +121,8 @@ nav .left, nav .right {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
     nav .left, nav .right {
-        flex-direction: column;
-        width: 100%;
-    }
-    nav a {
-        margin: 5px 0;
-        width: 90%; /* Ensure links take the same width */
+        justify-content: center;
     }
 }
+

@@ -10,14 +10,16 @@
     <img src="{{ url_for('static', filename='images/img.png') }}" alt="Photo">
     <header>
         <nav>
-            <div class="left">
-                <a href="{{ url_for('main.home') }}">Near Me</a>
-                <a href="{{ url_for('main.register') }}">Sign Up</a>
-                <a href="{{ url_for('main.login') }}">Login</a>
-            </div>
-            <div class="right">
-                <a href="{{ url_for('main.about') }}">About</a>
-                <a href="{{ url_for('main.contact') }}">Contact</a>
+            <div class="nav-container">
+                <div class="left">
+                    <a href="{{ url_for('main.home') }}">Near Me</a>
+                    <a href="{{ url_for('main.register') }}">Sign Up</a>
+                    <a href="{{ url_for('main.login') }}">Login</a>
+                </div>
+                <div class="right">
+                    <a href="{{ url_for('main.about') }}">About</a>
+                    <a href="{{ url_for('main.contact') }}">Contact</a>
+                </div>
             </div>
         </nav>
     </header>
