@@ -8,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
 }
-/*
 .register-container {
     background-color: #fff;
     padding: 20px;
@@ -18,7 +17,7 @@ body {
     width: 400px;
     max-width: 90%;  
     margin-top: 20px;
-} */
+} 
 
 h2 {
     margin-top: 0;
@@ -46,7 +45,7 @@ input[type="tel"] {
     margin-top: 10px;
     border: 2px solid #007bff;
     background-color: #007bff;
-    color: #fff;
+    /*color: #fff;*/
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
