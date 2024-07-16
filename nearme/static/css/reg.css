@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: darkgray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .register-container {
     background-color: #fff;
     padding: 20px;
@@ -15,9 +16,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 400px;
-    max-width: 90%;  
+    max-width: 90%; /* Adjust maximum width for responsiveness */
     margin-top: 20px;
-} 
+}
 
 h2 {
     margin-top: 0;
@@ -31,11 +32,11 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
-    width: calc(100% - 22px);
+    width: calc(100% - 22px); /* Adjust width to account for padding and borders */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #fff;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
@@ -45,7 +46,7 @@ input[type="tel"] {
     margin-top: 10px;
     border: 2px solid #007bff;
     background-color: #007bff;
-    /*color: #fff;*/
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
