@@ -31,7 +31,7 @@ body {
   input[type="text"],
   input[type="password"],
   input[type="checkbox"] {
-    width: calc(100% - 22px); /* Adjust width to account for padding and borders */
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
